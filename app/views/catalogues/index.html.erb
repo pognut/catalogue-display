@@ -1,20 +1,37 @@
-yey
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <% if user_signed_in? %>
+    <div class = "head">
+      hi user
+      <%= link_to('sign out', destroy_user_session_path, :method => :delete ) %>
+    </div>
+    <div class = "pdf-container">
+    < iframe src='/assets/images/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
+    </div>
 
-<% if user_signed_in? %>
-hi user
-<%= link_to('sign out', destroy_user_session_path, :method => :delete ) %>
-<iframe src='/assets/images/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
+  <% elsif admin_signed_in? %>
+    <div class = "head">
+      hi admin
+      <%= link_to('sign out', destroy_admin_session_path, :method => :delete ) %>
+      <%= link_to("invite", new_user_invitation_path) %>
+    </div>
+    <div class = "pdf-container">
+      <iframe class = "pdf" src='/assets/spirit sp 17catalog.pdf' style="border: none;"> </iframe>
+    </div>
+  <% else %>
+    sign in
 
+    <%= link_to('admin', '/admins/sign_in') %>
+    <%= link_to('user sign in', '/users/sign_in') %>
 
-<% elsif admin_signed_in? %>
-hi admin
-<%= link_to('sign out', destroy_admin_session_path, :method => :delete ) %>
-<%= link_to("invite", new_user_invitation_path) %>
-<iframe class = "pdf" src='/assets/spirit sp 17catalog.pdf' style="border: none;"> </iframe>
-<% else %>
-sign in
+  <% end %>
 
-<%= link_to('admin', '/admins/sign_in') %>
-<%= link_to('user sign in', '/users/sign_in') %>
-
-<% end %>
+</body>
+</html>
