@@ -13,8 +13,9 @@
       <%= link_to('sign out', destroy_user_session_path, :method => :delete ) %>
     </div>
     <div class = "pdf-container">
-    < iframe src='/assets/images/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
+    <iframe src='/assets/images/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
     </div>
+    <%= link_to('CHAMPION', controller: "catalogues", action: "show") %>
 
   <% elsif admin_signed_in? %>
     <div class = "head">
@@ -23,8 +24,13 @@
       <%= link_to("invite", new_user_invitation_path) %>
     </div>
     <div class = "pdf-container">
-      <iframe class = "pdf" src='/assets/spirit sp 17catalog.pdf' style="border: none;"> </iframe>
-      <iframe class = "pdf" src='/assets/CHAMPION/Fall  17 price list.pdf' style="border: none;"> </iframe>
+      <%= link_to('CHAMPION', controller: "catalogues", action: "show", id:"CHAMPION") %>
+      <%= link_to('GEAR', controller: "catalogues", action: "show", id:"GEAR") %>
+      <%= link_to('OUT OF HAND', controller: "catalogues", action: "show", id:"OUT OF HAND") %>
+      <%= link_to('SPERRY', controller: "catalogues", action: "show", id:"SPERRY") %>
+      <%= link_to('SPIRIT', controller: "catalogues", action: "show", id:"SPIRIT") %>
+      <%= link_to('UNDER ARMOR', controller: "catalogues", action: "show", id:"UNDER ARMOR") %>
+      <%= link_to('VANTAGE', controller: "catalogues", action: "show", id:"VANTAGE") %>
     </div>
   <% else %>
     sign in
