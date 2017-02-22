@@ -11,7 +11,7 @@ class CataloguesController < ApplicationController
     # get brand name from URL (Don't ever do this in RL)
     @account = params[:id]
     # grab all files in subdirectory based on brand name
-    @pdfs = Dir.glob('public/assets/'+ActionController::Base.helpers.asset_path(@account)+'/*')
+    @pdfs = Dir.glob('vendor/assets'+ActionController::Base.helpers.asset_path(@account)+'/*')
   end
 
 end
