@@ -26,7 +26,7 @@
     </div>
     <div class = "pdf-container">
       <% @pdfs.each do |pdf| %>
-      <a href="/<%= @account %>/<%= pdf.split('/').last %>"><%= pdf.split('/').last %></a>
+      <a href="/assets/<%= pdf.split('/').last %>"><%= pdf.split('/').last %></a>
       <% end %>
     </div>
   <% else %>
