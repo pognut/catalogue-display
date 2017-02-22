@@ -23,7 +23,7 @@
       <%= link_to('sign out', destroy_admin_session_path, :method => :delete ) %>
       <%= link_to("invite", new_user_invitation_path) %>
     </div>
-    <iframe src='/assets/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
+    <iframe src='/assets/images/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
     <div class = "pdf-container">
       <% @pdfs.each do |pdf| %>
       <a href="/assets/<%= pdf.split('/').last %>"><%= pdf.split('/').last %></a>
