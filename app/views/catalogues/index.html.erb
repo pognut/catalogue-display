@@ -18,6 +18,7 @@
     <%= link_to('CHAMPION', controller: "catalogues", action: "show") %>
 
   <% elsif admin_signed_in? %>
+  <!-- dont forget to add an upload catalogue method of some kind -->
     <div class = "head">
       hi admin
       <%= link_to('sign out', destroy_admin_session_path, :method => :delete ) %>

@@ -18,3 +18,5 @@ test:
 production:
   <<: *default
   database: db/mom_catalogue_production
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>

@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+group :production do
+  gem 'unicorn'
+end
 gem 'pg'
 gem 'devise'
 gem 'devise_invitable'
