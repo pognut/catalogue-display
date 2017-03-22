@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <div class ="header">
+      <!-- this goes to index -->
+    <%= image_tag("headers/#{@account}", class: "header_logo") %>
+    <p class = "front-title"><%= @account %></p>
+  </div>
+
+  <% if user_signed_in? %>
+
+    <div class = "pdf-container">
+    </div>
+
+  <% elsif admin_signed_in? %>
+    <!-- <%= @test %> -->
+    <div class = "pdf-container">
+      <% @links.each do |link| %>
+      <% filename = link.split('/').last %>
+      <a href='<%= image_path("#{@account}/#{@subaccount}/#{filename}")%>'><%= filename %></a>
+      <% end %>
+    </div>
+    <p id="showback">
+      <a href = "/catalogues/<%= @account %>">BACK</a>
+    </p>
+  <% else %>
+  <p>Please sign in</p>
+  <% end %>
+
+</body>
+</html>

@@ -6,9 +6,35 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
   </head>
 
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <div class = "head">
+          hi user
+          <%= link_to('sign out', destroy_user_session_path, :method => :delete ) %>
+          <%= link_to('CONTACT', controller: "catalogues", action: "contact") %>
+        </div>
+      <% elsif admin_signed_in? %>
+        <!-- <%= @test %> -->
+        <div class = "head">
+          Hi Mom
+          <%= link_to('sign out', destroy_admin_session_path, :method => :delete ) %>
+          <%= link_to("invite", new_user_invitation_path) %>
+          <a href="/contact">CONTACT</a>
+        </div>
+      <% else %>
+        <div class = "head">
+          <%= link_to('ADMIN LOG IN', '/admins/sign_in') %>
+          <%= link_to('WHOLESALE LOG IN', '/users/sign_in') %>
+        </div>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

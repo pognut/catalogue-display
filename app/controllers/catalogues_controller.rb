@@ -11,7 +11,26 @@ class CataloguesController < ApplicationController
     # get brand name from URL (Don't ever do this in RL)
     @account = params[:id]
     # grab all files in subdirectory based on brand name
-    @pdfs = Dir.glob('vendor/assets'+ActionController::Base.helpers.asset_path(@account)+'/*')
+    puts @account
+    if @account == "UNDER ARMOUR" || @account == "GEAR"
+
+    end
+    @filenames = {"OUT OF HAND"=>["Adult Catalog", "Youth Catalog", "Comfort Colors", "New Specialty Program"]}
+    # automate subfolders somehow
+    @pdfs = Dir.glob('app/assets/images'+ActionController::Base.helpers.asset_path(@account)+'/*')
+  end
+
+  def subfolder
+    @account = params[:id]
+    @subaccount = params[:subid]
+    puts params
+    @links = Dir.glob('app/assets/images'+ActionController::Base.helpers.asset_path(@account)+'/'+ActionController::Base.helpers.asset_path(@subaccount)+'/*')
+    puts @links
+    render "subfolder.html.erb"
+  end
+
+  def contact
+    render "contact.html.erb"
   end
 
 end

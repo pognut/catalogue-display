@@ -7,35 +7,39 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
-  <%= @account %>
+  <div class ="header">
+      <!-- this goes to index -->
+    <%= image_tag("headers/#{@account}", class: "header_logo") %>
+    <p class = "front-title"><%= @account %></p>
+  </div>
+
   <% if user_signed_in? %>
-    <div class = "head">
-      hi user
-      <%= link_to('sign out', destroy_user_session_path, :method => :delete ) %>
-    </div>
+
     <div class = "pdf-container">
-    <iframe src='/assets/images/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
     </div>
 
   <% elsif admin_signed_in? %>
     <!-- <%= @test %> -->
-    <div class = "head">
-      hi admin
-      <%= link_to('sign out', destroy_admin_session_path, :method => :delete ) %>
-      <%= link_to("invite", new_user_invitation_path) %>
-    </div>
-    <iframe src='/assets/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
     <div class = "pdf-container">
-      <% @pdfs.each do |pdf| %>
-      <a href="/assets/<%= pdf.split('/').last %>"><%= pdf.split('/').last %></a>
+      <% if @account == "GEAR" || "UNDER ARMOR" %>
+        <% @pdfs.each_with_index do |pdf, index| %>
+        <% filename = pdf.split('/').last %>
+      <!-- displayname = @filenames[@account][index]  -->
+        <%= link_to(filename, controller: "catalogues", action: "subfolder", subid:filename, id:@account) %>
+        <% end %>
+      <% else %>
+        <% @pdfs.each_with_index do |pdf, index| %>
+        <% filename = pdf.split('/').last %>
+        <!-- displayname = @filenames[@account][index]  -->
+        <a href='<%= image_path("#{@account}/#{filename}")%>'><%= filename %></a>
+        <% end %>
       <% end %>
     </div>
+    <p id="showback">
+      <a href = "/">BACK</a>
+    </p>
   <% else %>
-    sign in
-
-    <%= link_to('admin', '/admins/sign_in') %>
-    <%= link_to('user sign in', '/users/sign_in') %>
-
+  <p>Please sign in</p>
   <% end %>
 
 </body>

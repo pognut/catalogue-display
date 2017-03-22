@@ -6,3 +6,88 @@
   height: 80vh;
 }
 
+.header_logo {
+  //put in middle
+  max-width: 30vh;
+  max-height: 30vw;
+}
+
+.header {
+  text-align: center;
+  // margin-top: -1vh;
+  // margin-left: 25vw;
+  // margin-right: 15vw;
+  // max-width: 30vw;
+  // display: inline-block;
+}
+
+.snap-head-text {
+  font-size: 25pt
+  //capitalize
+  //wider, taller, bigger font
+}
+
+.head {
+  vertical-align: top;
+  text-align: right;
+  // display: inline-block;
+  // width: 25vw;
+  font-size: 15pt;
+  margin-right: 5vw;
+}
+
+header {
+  text-align: center;
+}
+
+.front-title {
+  text-align: center;
+  font-size: 30pt
+}
+
+.slick-test {
+  max-width: 25vw;
+  max-height: 60vh;
+  margin: 0 auto;
+}
+
+.slick-test img {
+  height: 50vh
+}
+
+.pdf-container {
+  padding-top: 1vh;
+  text-align: center;
+}
+
+.pdf-container * {
+  display: block;
+  margin-top: 10px;
+  font-size: 18pt;
+}
+
+.front-title {
+  // font-size: 1in;
+  // margin-top: .75in;
+}
+
+#title-first {
+  color:#BF5FFF
+}
+
+#title-second {
+  color:limegreen
+}
+
+#contact {
+  text-align: center;
+  font-size: 20pt;
+}
+
+#showback {
+  text-align: center;
+  font-size: 20pt;
+}
+//make login bigger
+//find snapdragon font
+//put carousel in center

@@ -7,22 +7,24 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
+  <div class ="header">
+      <!-- this goes to index -->
+    <%= image_tag("Snapdragon_w_type.jpg", class: "header_logo") %>
+    <p class = "snap-head-text">SNAPDRAGON PRODUCTIONS</p>
+  </div>
+ <p class = "front-title"><span id="title-first">SPRING</span>/<span id="title-second">SUMMER 2017</span></p>
   <% if user_signed_in? %>
-    <div class = "head">
-      hi user
-      <%= link_to('sign out', destroy_user_session_path, :method => :delete ) %>
-    </div>
     <div class = "pdf-container">
-    <iframe src='/assets/images/spirit sp 17catalog.pdf' width="600" height="780" style="border: none;"> </iframe>
     </div>
     <%= link_to('CHAMPION', controller: "catalogues", action: "show") %>
 
-  <% elsif admin_signed_in? %>
+  <% else admin_signed_in? %>
   <!-- dont forget to add an upload catalogue method of some kind -->
-    <div class = "head">
-      hi admin
-      <%= link_to('sign out', destroy_admin_session_path, :method => :delete ) %>
-      <%= link_to("invite", new_user_invitation_path) %>
+    <div class = 'slick-test'>
+      <%= image_tag('SnipImage.JPG') %>
+      <%= image_tag('SnipImage (1).JPG') %>
+      <%= image_tag('SnipImage (2).JPG') %>
+      <%= image_tag('image001.png') %>
     </div>
     <div class = "pdf-container">
       <%= link_to('CHAMPION', controller: "catalogues", action: "show", id:"CHAMPION") %>
@@ -30,15 +32,9 @@
       <%= link_to('OUT OF HAND', controller: "catalogues", action: "show", id:"OUT OF HAND") %>
       <%= link_to('SPERRY', controller: "catalogues", action: "show", id:"SPERRY") %>
       <%= link_to('SPIRIT', controller: "catalogues", action: "show", id:"SPIRIT") %>
-      <%= link_to('UNDER ARMOR', controller: "catalogues", action: "show", id:"UNDER ARMOR") %>
+      <%= link_to('UNDER ARMOUR', controller: "catalogues", action: "show", id:"UNDER ARMOUR") %>
       <%= link_to('VANTAGE', controller: "catalogues", action: "show", id:"VANTAGE") %>
     </div>
-  <% else %>
-    sign in
-
-    <%= link_to('admin', '/admins/sign_in') %>
-    <%= link_to('user sign in', '/users/sign_in') %>
-
   <% end %>
 
 </body>

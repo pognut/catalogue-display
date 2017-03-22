@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # end
   resources :catalogues
   root to: 'catalogues#index'
+  get "/contact", to: "catalogues#contact"
+  get "/catalogues/:id/:subid", to: "catalogues#subfolder"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
