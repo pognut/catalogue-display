@@ -12,9 +12,6 @@ class CataloguesController < ApplicationController
     @account = params[:id]
     # grab all files in subdirectory based on brand name
     puts @account
-    if @account == "UNDER ARMOUR" || @account == "GEAR"
-
-    end
     @filenames = {"OUT OF HAND"=>["Adult Catalog", "Youth Catalog", "Comfort Colors", "New Specialty Program"]}
     # automate subfolders somehow
     @pdfs = Dir.glob('app/assets/images'+ActionController::Base.helpers.asset_path(@account)+'/*')

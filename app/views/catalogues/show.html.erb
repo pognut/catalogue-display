@@ -21,7 +21,7 @@
   <% elsif admin_signed_in? %>
     <!-- <%= @test %> -->
     <div class = "pdf-container">
-      <% if @account == "GEAR" || "UNDER ARMOR" %>
+      <% if @account == "GEAR" || @account == "UNDER ARMOUR" %>
         <% @pdfs.each_with_index do |pdf, index| %>
         <% filename = pdf.split('/').last %>
       <!-- displayname = @filenames[@account][index]  -->
@@ -30,11 +30,26 @@
       <% else %>
         <% @pdfs.each_with_index do |pdf, index| %>
         <% filename = pdf.split('/').last %>
-        <!-- displayname = @filenames[@account][index]  -->
+        <!-- split again to remove pdf -->
         <a href='<%= image_path("#{@account}/#{filename}")%>'><%= filename %></a>
         <% end %>
       <% end %>
+      <a href="#">ART</a>
+      <a href="#">COLOR STORIES</a>
+      <a href="#">ORDER FORM</a>
+      <a href="#">CREDIT APP</a>
     </div>
+    <% if @account == "SPIRIT" %>
+      <div class = 'slick-test'>
+      <!-- set up folder for scrolling images, grab filenames in controller, pass array in instance var  -->
+      <!-- @imagenames.each |name| image_tag(@account/scrollimages/name) -->
+        <%= image_tag('SnipImage.JPG') %>
+        <%= image_tag('SnipImage (1).JPG') %>
+        <%= image_tag('SnipImage (2).JPG') %>
+        <%= image_tag('image001.png') %>
+      </div>
+    <% end %>
+
     <p id="showback">
       <a href = "/">BACK</a>
     </p>

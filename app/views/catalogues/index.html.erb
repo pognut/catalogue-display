@@ -14,28 +14,34 @@
   </div>
  <p class = "front-title"><span id="title-first">SPRING</span>/<span id="title-second">SUMMER 2017</span></p>
   <% if user_signed_in? %>
-    <div class = "pdf-container">
+    <div class = "link-container">
     </div>
     <%= link_to('CHAMPION', controller: "catalogues", action: "show") %>
 
   <% else admin_signed_in? %>
   <!-- dont forget to add an upload catalogue method of some kind -->
-    <div class = 'slick-test'>
-      <%= image_tag('SnipImage.JPG') %>
-      <%= image_tag('SnipImage (1).JPG') %>
-      <%= image_tag('SnipImage (2).JPG') %>
-      <%= image_tag('image001.png') %>
-    </div>
-    <div class = "pdf-container">
-      <%= link_to('CHAMPION', controller: "catalogues", action: "show", id:"CHAMPION") %>
-      <%= link_to('GEAR', controller: "catalogues", action: "show", id:"GEAR") %>
-      <%= link_to('OUT OF HAND', controller: "catalogues", action: "show", id:"OUT OF HAND") %>
-      <%= link_to('SPERRY', controller: "catalogues", action: "show", id:"SPERRY") %>
-      <%= link_to('SPIRIT', controller: "catalogues", action: "show", id:"SPIRIT") %>
-      <%= link_to('UNDER ARMOUR', controller: "catalogues", action: "show", id:"UNDER ARMOUR") %>
-      <%= link_to('VANTAGE', controller: "catalogues", action: "show", id:"VANTAGE") %>
+    <h1 id="repping">REPRESENTING</h1>
+    <div class = "link-container">
+      <%= link_to image_tag("champcover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"CHAMPION"} %>
+      <%= link_to image_tag("gearcover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"GEAR"} %>
+      <%= link_to image_tag("outofhandcover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"OUT OF HAND"} %>
+      <%= link_to image_tag("sperrycover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"SPERRY"} %>
+      <%= link_to image_tag("spiritcover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"SPIRIT"} %>
+      <%= link_to image_tag("uacover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"UNDER ARMOUR"} %>
+      <%= link_to image_tag("vantagecover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"VANTAGE"} %>
     </div>
   <% end %>
+
+<!-- ideas
+* order submission form for sperry, on submit goes to choice of mom/Irene
+*
+
+ -->
+
+ <!-- to do
+* fix links extending past images
+* automate filename .pdf removal
+  -->
 
 </body>
 </html>
