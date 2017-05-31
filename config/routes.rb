@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root to: 'catalogues#index'
   get "/contact", to: "catalogues#contact"
   get "/catalogues/:id/:subid", to: "catalogues#subfolder"
+  get "/vendors", to: "catalogues#vendors"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
