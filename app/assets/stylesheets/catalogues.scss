@@ -49,6 +49,7 @@ header {
   max-width: 25vw;
   max-height: 60vh;
   margin: 0 auto;
+  clear: both;
 }
 
 .slick-test img {
@@ -122,16 +123,20 @@ body {
 // drop down css
 .front-menu
 {
-  margin-top:15px
+  margin-top:15px;
+  text-align: center;
+
 }
 
 .front-menu ul
 {
+  display: inline-block;
   list-style:none;
   position:relative;
-  float:left;
+  // float:left;
   margin:0;
-  padding:0
+  padding:0;
+  z-index: 4;
 }
 
 .front-menu ul a
@@ -150,7 +155,7 @@ body {
 {
   position:relative;
   float:left;
-  margin:0;
+  // margin:0;
   padding:0
 }
 
@@ -195,4 +200,9 @@ body {
 .front-menu ul li:hover > ul
 {
   display:block
+}
+
+.show-drop {
+  margin-left: 20px;
+  margin-right: 20px;
 }

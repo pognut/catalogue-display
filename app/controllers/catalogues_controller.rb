@@ -32,10 +32,11 @@ class CataloguesController < ApplicationController
     @string=""
     def listifier(hash)
       hash.each do |folder|
-        # puts folder
         if folder.is_a?(Hash)
+          # puts folder[:children].length
+          next if folder[:children].length == 0
           # puts "testing"
-          str = "<li>#{folder["name"]}<ul>"
+          str = "<li class='show-drop'>#{folder["name"]}<ul>"
           @string = @string + str
             # if kid[:children].length != 0
               # puts "length"
