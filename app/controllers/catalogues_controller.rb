@@ -36,7 +36,8 @@ class CataloguesController < ApplicationController
           # puts folder[:children].length
           next if folder[:children].length == 0
           # puts "testing"
-          str = "<li class='show-drop'>#{folder["name"]}<ul>"
+          cap = folder["name"].upcase
+          str = "<li class='show-drop'><a href='#'>#{cap}</a><ul>"
           @string = @string + str
             # if kid[:children].length != 0
               # puts "length"

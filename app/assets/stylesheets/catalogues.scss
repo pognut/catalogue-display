@@ -64,9 +64,10 @@ header {
 .link-container * {
   display: inline-block;
   margin-top: 10px;
-  padding-right: 2.5vw;
-  padding-left: 2.5vw;
+  padding-right: 2vw;
+  padding-left: 2vw;
   font-size: 18pt;
+
 }
 
 
@@ -203,6 +204,6 @@ body {
 }
 
 .show-drop {
-  margin-left: 20px;
-  margin-right: 20px;
+  // margin-left: 20px;
+  // margin-right: 20px;
 }
