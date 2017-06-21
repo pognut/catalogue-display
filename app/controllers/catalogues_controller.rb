@@ -16,14 +16,39 @@ class CataloguesController < ApplicationController
       data = {'name' => (name || path), 'type' => 'folder'}
       data[:children] = children = []
       Dir.foreach(path) do |entry|
+        # puts entry
         next if exclude.include?(entry)
         full_path = File.join(path, entry)
         if File.directory?(full_path)
-          children << directory_hash(full_path, entry)
+          if entry.include?("credit app")
+            puts Dir.entries(full_path)
+            if Dir.entries(full_path).length >= 3
+              child_path = File.join(full_path, Dir.entries(full_path)[2])
+              true_path = child_path.partition("app/assets/images/")[2]
+              link = ActionController::Base.helpers.image_path(true_path)
+              # puts full_path
+              # puts link
+              entry = entry.split('.')[0]
+              if entry.include?('--')
+                entry = entry.split('--')[1]
+              end
+              entry = entry.upcase
+              children <<  "<li><a href='#{link}'>#{entry}</a></li>"
+            else
+              children <<  "<li><a href='#'>NO APP</a></li>"
+            end
+          else
+            children << directory_hash(full_path, entry)
+          end
         else
           true_path = full_path.partition("app/assets/images/")[2]
-          puts true_path
           link = ActionController::Base.helpers.image_path(true_path)
+          puts true_path
+          # puts link
+          entry = entry.split('.')[0]
+          if entry.include?('--')
+            entry = entry.split('--')[1]
+          end
           children <<  "<li><a href='#{link}'>#{entry}</a></li>"
         end
       end
@@ -37,10 +62,14 @@ class CataloguesController < ApplicationController
           next if folder[:children].length == 0
           # puts "testing"
           cap = folder["name"].upcase
-          str = "<li class='show-drop'><a href='#'>#{cap}</a><ul>"
+          if cap.include?('--')
+            clean = cap.split('--')[1]
+            clean = clean.split('.')[0]
+          else
+            clean = cap.split('.')[0]
+          end
+          str = "<li class='show-drop'><a href='#'>#{clean}</a><ul>"
           @string = @string + str
-            # if kid[:children].length != 0
-              # puts "length"
           listifier(folder[:children])
           @string = @string + "</ul>"
         else
@@ -56,7 +85,7 @@ class CataloguesController < ApplicationController
     # automate subfolders somehow
     @pdfs = directory_hash('app/assets/images'+ActionController::Base.helpers.asset_path(@account))
     @tester = listifier(@pdfs[:children])
-    puts @string
+    # puts @string
   end
 
   def subfolder

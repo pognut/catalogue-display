@@ -6,6 +6,14 @@
   <title></title>
   <link rel="stylesheet" href="">
 </head>
+<!--(DONE) make gear single category (move outta town with the rest, make it its own dropdown category under main catelogs) -->
+<!--(DONE) Arts becomes best arts (take out color stories) -->
+<!--(DONE) can change credit app to file name if needed mom's gonna give vendor unique credit apps/order forms (if no app, will need to put "no app") -->
+<!-- general graphical clean up-->
+<!--(DONE) username/password and login stanardization (removing if user logged in bloat etc)-->
+<!-- see if I can make the dropdowns prettier -->
+<!--(DONE) fix contact link -->
+<!--(DONE) remove .pdf from links -->
 <body>
   <div class ="header">
       <!-- this goes to index -->
@@ -14,13 +22,9 @@
     <%= image_tag("Snapdragon_w_type.jpg", class: "header_logo") %>
     <p class = "snap-head-text">SNAPDRAGON PRODUCTIONS</p>
   </div>
- <p class = "front-title"><span id="title-first">SPRING</span>/<span id="title-second">SUMMER 2017</span></p>
-  <% if user_signed_in? %>
-    <div class = "link-container">
-    </div>
-    <%= link_to('CHAMPION', controller: "catalogues", action: "show") %>
+ <p class = "front-title"><span id="title-first">FALL</span>/<span id="title-second">WINTER 2017-18</span></p>
 
-  <% else admin_signed_in? %>
+  <% if admin_signed_in? %>
   <!-- dont forget to add an upload catalogue method of some kind -->
 <!--     <h1 id="repping">REPRESENTING</h1> -->
     <div class="front-menu">
@@ -28,6 +32,8 @@
         <!-- dropdown menu with links to all vendors page and individual pages  -->
         <li><a href="/vendors">VENDORS</a>
           <ul>
+            <!-- add view all -->
+            <li><%= link_to('BUM WRAPS', controller: "catalogues", action: "show", id:"BUM WRAPS") %></li>
             <li><%= link_to('CHAMPION', controller: "catalogues", action: "show", id:"CHAMPION") %></li>
             <li><%= link_to('GEAR', controller: "catalogues", action: "show", id:"GEAR") %></li>
             <li><%= link_to('OUT OF HAND', controller: "catalogues", action: "show", id:"OUT OF HAND") %></li>
@@ -35,12 +41,12 @@
             <li><%= link_to('SPIRIT', controller: "catalogues", action: "show", id:"SPIRIT") %></li>
             <li><%= link_to('UNDER ARMOUR', controller: "catalogues", action: "show", id:"UNDER ARMOUR") %></li>
             <li><%= link_to('VANTAGE', controller: "catalogues", action: "show", id:"VANTAGE") %></li>
-            <li><%= link_to('BUM WRAPS', controller: "catalogues", action: "show", id:"BUM WRAPS") %></li>
+
           </ul>
         </li>
         <li><a href="#">PHOTO GALLERY</a></li>
         <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a href="/contact">CONTACT</a></li>
       </ul>
     </div>
     <div class = 'slick-test'>

@@ -12,12 +12,7 @@
     <p class = "front-title"><%= @account %></p>
   </div>
 
-  <% if user_signed_in? %>
-
-    <div class = "pdf-container">
-    </div>
-
-  <% elsif admin_signed_in? %>
+  <% if admin_signed_in? %>
     <!-- <%= @test %> -->
     <div class = "pdf-container">
 <!--       <% if @account == "GEAR" || @account == "UNDER ARMOUR" %>
@@ -40,9 +35,6 @@
       <div class="front-menu">
         <ul>
           <%= @string.html_safe %>
-          <li><a href="#">COLOR STORIES</a></li>
-          <li><a href="#">ORDER FORM</a></li>
-          <li><a href="#">CREDIT APP</a></li>
         </ul>
       </div>
     </div>
