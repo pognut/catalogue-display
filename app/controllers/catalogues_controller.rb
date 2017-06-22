@@ -15,15 +15,19 @@ class CataloguesController < ApplicationController
       exclude.concat(['..', '.', '.git', '__MACOSX', '.DS_Store'])
       data = {'name' => (name || path), 'type' => 'folder'}
       data[:children] = children = []
-      Dir.foreach(path) do |entry|
+      Dir.entries(path).sort.each do |entry|
+        # Dir.entries(path).each
         # puts entry
         next if exclude.include?(entry)
         full_path = File.join(path, entry)
         if File.directory?(full_path)
           if entry.include?("credit app")
-            puts Dir.entries(full_path)
-            if Dir.entries(full_path).length >= 3
-              child_path = File.join(full_path, Dir.entries(full_path)[2])
+            kids = Dir.entries(full_path)
+            kids.reject! {|x|exclude.include?(x)}
+            puts kids
+            if kids.length >= 1
+              # can add a kids.each loop here if mom ever wants more than one credit app
+              child_path = File.join(full_path, kids[0])
               true_path = child_path.partition("app/assets/images/")[2]
               link = ActionController::Base.helpers.image_path(true_path)
               # puts full_path
