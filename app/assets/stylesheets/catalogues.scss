@@ -42,13 +42,13 @@ header {
 
 .front-title {
   text-align: center;
-  font-size: 30pt
+  font-size: 30pt;
 }
 
 .slick-test {
   max-width: 25vw;
   max-height: 60vh;
-  margin: 0 auto;
+  margin: 40px auto;
   clear: both;
 }
 
@@ -79,7 +79,7 @@ header {
 
 .pdf-container * {
   display: block;
-  margin-top: 10px;
+  margin: 10px 0;
   font-size: 26pt;
   text-decoration: none;
   color: teal;
@@ -157,7 +157,8 @@ body {
   position:relative;
   float:left;
   // margin:0;
-  padding:0
+  padding:0;
+  // overflow-wrap: break-word;
 }
 
 .front-menu ul li.current-menu-item
@@ -183,13 +184,14 @@ body {
 .front-menu ul ul li
 {
   float:none;
-  width:200px
+  width:200px;
+  overflow-wrap: break-word;
 }
 
 .front-menu ul ul a
 {
   line-height:120%;
-  padding:10px 15px
+  padding:10px 5px;
 }
 
 .front-menu ul ul ul
