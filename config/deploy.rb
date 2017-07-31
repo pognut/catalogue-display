@@ -46,14 +46,7 @@ namespace :deploy do
     end
   end
 
-  task :install do
-    run "cd #{current_path} && bundle install"
-    run "cd #{current_path} && bundle update"
-  end
-
-  before :restart, :install
   after :publishing, :restart
-
 
 #   after :restart, :clear_cache do
 #     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -66,4 +59,4 @@ namespace :deploy do
 
 end
 
-# ...lots of other code
+

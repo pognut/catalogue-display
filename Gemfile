@@ -7,6 +7,7 @@ end
 
 group :production do
   gem 'unicorn'
+  gem 'capistrano3-unicorn'
 end
 gem 'pg'
 gem 'devise'
