@@ -36,17 +36,24 @@ set :pty, true
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-# namespace: deploy do
+namespace :deploy do
 
 #   desc 'Restart application'
-#   task :restart do
-#     on roles(:app), in: :sequence, wait: 5 do
-#       # Your restart mechanism here, for example:
-#       execute :touch, release_path.join('tmp/restart.txt')
-#     end
-#   end
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      invoke 'unicorn:reload'
+    end
+  end
 
-#   after :publishing, :restart
+  task :install do
+    run "cd #{current_path} && bundle install"
+    run "cd #{current_path} && bundle update"
+  end
+
+  before :restart, :install
+  after :publishing, :restart
+
 
 #   after :restart, :clear_cache do
 #     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -56,5 +63,7 @@ set :pty, true
 #       # end
 #     end
 #   end
-# testing testing. If this shows up I win.
-# end
+
+end
+
+# ...lots of other code
