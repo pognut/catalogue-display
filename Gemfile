@@ -8,6 +8,8 @@ end
 group :production do
   gem 'unicorn'
   gem 'capistrano3-unicorn'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rbenv'
 end
 gem 'pg'
 gem 'devise'
