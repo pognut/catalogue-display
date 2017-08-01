@@ -24,7 +24,7 @@ set :pty, true
 # set :rvm1_map_bins, %w(rake gem bundle ruby honeybadger)
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
-set :bundle_flags, '--deployment'
+# set :bundle_flags, '--deployment'
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
