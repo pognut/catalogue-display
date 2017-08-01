@@ -43,7 +43,7 @@ namespace :deploy do
       # Your restart mechanism here, for example:
       invoke 'unicorn:reload'
     end
-  end
+
 
 #   after :publishing, :restart
 
