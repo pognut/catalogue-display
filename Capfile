@@ -4,7 +4,10 @@ require "capistrano/setup"
 # Include default deployment tasks
 require "capistrano/deploy"
 
-require 'capistrano3/unicorn'
+# require 'capistrano3/unicorn'
+
+require 'capistrano/simple-capistrano-unicorn'
+
 
 # require 'capistrano/bundler'
 
