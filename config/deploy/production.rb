@@ -20,6 +20,8 @@ server '104.236.87.156', user: 'deployer', roles: %w{web}
 role :app, %w{deployer@104.236.87.156}
 role :web, %w{deployer@104.236.87.156}
 role :db,  %w{deployer@104.236.87.156}
+role :unicorn %w{root@104.236.87.156}
+
 
 
 

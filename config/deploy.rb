@@ -25,8 +25,7 @@ set :pty, true
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :unicorn_config, "/etc/default/unicorn"
 set :unicorn_pid, "/var/run/unicorn.pid"
-set :use_sudo, true
-set :user, "root"
+set :unicorn_roles, "root"
 
 
 # set :bundle_flags, '--deployment'
@@ -47,13 +46,14 @@ set :user, "root"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
 
   desc 'Restart application'
   task :restart do
       # Your restart mechanism here, for example:
-      # invoke 'unicorn:reload'
+      invoke 'unicorn:reload'
     end
 
 
@@ -71,4 +71,4 @@ namespace :deploy do
 
 end
 
-after 'deploy', 'unicorn:hard_restart'
+# after 'deploy', 'unicorn:restart'
