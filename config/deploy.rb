@@ -24,7 +24,7 @@ set :pty, true
 # set :rvm1_map_bins, %w(rake gem bundle ruby honeybadger)
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
-set :bundle_flags, '--deployment'
+# set :bundle_flags, '--deployment'
 
 # set :bundle_path, -> { current_path }
 
@@ -52,7 +52,7 @@ namespace :deploy do
     end
 
 
-#   after :publishing, :restart
+  after :publishing, :restart
 
 # #   after :restart, :clear_cache do
 # #     on roles(:web), in: :groups, limit: 3, wait: 10 do
