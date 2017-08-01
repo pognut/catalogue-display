@@ -24,6 +24,9 @@ set :pty, true
 # set :rvm1_map_bins, %w(rake gem bundle ruby honeybadger)
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
+set :unicorn_pid, "/var/run/unicorn.pid"
+set :unicorn_config_path, "/etc/default/unicorn"
+
 # set :bundle_flags, '--deployment'
 
 # set :bundle_path, -> { current_path }
