@@ -45,7 +45,7 @@ set :unicorn_roles, "root"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
 
   desc 'Restart application'
@@ -53,8 +53,6 @@ namespace :deploy do
       # Your restart mechanism here, for example:
       invoke 'unicorn:reload'
     end
-
-  after :publishing, :restart
 
 
 
