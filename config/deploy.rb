@@ -23,9 +23,9 @@ set :pty, true
 
 # set :rvm1_map_bins, %w(rake gem bundle ruby honeybadger)
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
-set :unicorn_config_path, "/etc/default/unicorn"
+set :unicorn_config, "/etc/default/unicorn"
 set :unicorn_pid, "/var/run/unicorn.pid"
-# set :unicorn_roles, "root"
+set :use_sudo, true
 
 # set :bundle_flags, '--deployment'
 
@@ -45,14 +45,16 @@ set :unicorn_pid, "/var/run/unicorn.pid"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-after 'deploy:publishing', 'deploy:restart'
+
 namespace :deploy do
 
   desc 'Restart application'
   task :restart do
       # Your restart mechanism here, for example:
-      invoke 'unicorn:reload'
+      # invoke 'unicorn:reload'
     end
+
+
 
 
 
@@ -67,4 +69,4 @@ namespace :deploy do
 
 end
 
-# after 'deploy', 'unicorn:restart'
+after 'deploy', 'unicorn:restart'
