@@ -21,7 +21,9 @@ set :format, :pretty
 # Default value for :pty is false
 set :pty, true
 
-set :rvm1_map_bins, %w(rake gem bundle ruby honeybadger)
+# set :rvm1_map_bins, %w(rake gem bundle ruby honeybadger)
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
+
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
