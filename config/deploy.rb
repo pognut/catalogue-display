@@ -51,10 +51,10 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
       # Your restart mechanism here, for example:
-      # invoke 'unicorn:reload'
+      invoke 'unicorn:reload'
     end
 
-
+  after :publishing, :restart
 
 
 
@@ -69,4 +69,4 @@ namespace :deploy do
 
 end
 
-after 'deploy', 'unicorn:restart'
+# after 'deploy', 'unicorn:restart'
