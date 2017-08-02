@@ -25,7 +25,6 @@ set :pty, true
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :unicorn_config, "/etc/default/unicorn"
 set :unicorn_pid, "/var/run/unicorn.pid"
-set :use_sudo, true
 
 # set :bundle_flags, '--deployment'
 
