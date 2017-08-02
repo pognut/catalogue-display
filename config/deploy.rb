@@ -68,4 +68,4 @@ namespace :deploy do
 
 end
 
-after 'deploy', 'unicorn:restart'
+after 'deploy', 'unicorn:hard_restart'
