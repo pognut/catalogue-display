@@ -53,7 +53,7 @@ namespace :deploy do
       # Your restart mechanism here, for example:
       # invoke 'unicorn:reload'
       on roles(:app) do
-        execute *%W[sudo unicorn service restart]
+        execute *%W[sudo service unicorn restart]
       end
     end
 
