@@ -22,7 +22,7 @@ set :format, :pretty
 set :pty, true
 
 # set :rvm1_map_bins, %w(rake gem bundle ruby honeybadger)
-set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
+# set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :unicorn_config, "/etc/default/unicorn"
 set :unicorn_pid, "/var/run/unicorn.pid"
 
