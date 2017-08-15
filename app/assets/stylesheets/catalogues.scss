@@ -8,8 +8,8 @@
 
 .header_logo {
   //put in middle
-  max-width: 30vh;
-  max-height: 30vw;
+  max-width: 20vh;
+  max-height: 20vw;
 }
 
 .header {
@@ -27,13 +27,21 @@
   //wider, taller, bigger font
 }
 
-.head {
+// .head {
+//   vertical-align: top;
+//   // text-align: right;
+//   // display: inline-block;
+//   // width: 25vw;
+//   font-size: 15pt;
+//   // margin-right: 5vw;
+// }
+
+.authentication-link {
   vertical-align: top;
-  text-align: right;
-  // display: inline-block;
-  // width: 25vw;
-  font-size: 15pt;
-  margin-right: 5vw;
+}
+
+.top-menu {
+  margin-top: 10%;
 }
 
 header {
@@ -43,6 +51,11 @@ header {
 .front-title {
   text-align: center;
   font-size: 30pt;
+}
+
+.brand-title {
+  text-align: left;
+  margin-left: 40px;
 }
 
 .slick-test {
@@ -61,15 +74,22 @@ header {
   text-align: center;
 }
 
-.link-container * {
+.link-container a {
   display: inline-block;
   margin-top: 10px;
-  padding-right: 2vw;
-  padding-left: 2vw;
+  // padding-right: 6vw;
+  // padding-left: 6vw;
   font-size: 18pt;
-
+  border: 1px solid gray;
+  width: 20vw;
+  height: 40vh;
 }
 
+.link-container a img {
+  min-width: 19vw;
+  max-height: 39vh;
+  margin-top: 3px;
+}
 
 
 .pdf-container {
@@ -80,9 +100,29 @@ header {
 .pdf-container * {
   display: block;
   margin: 10px 0;
-  font-size: 26pt;
+  // font-size: 26pt;
   text-decoration: none;
-  color: teal;
+  // color: teal;
+}
+
+.category {
+  text-align: left;
+  color: gray;
+  font-size: 14pt;
+  border-bottom: 1px solid lightblue;
+}
+
+.kid {
+  text-align: right;
+
+}
+
+.kid a {
+  color: gray;
+}
+
+.kid a {
+  color: lightblue;
 }
 
 .front-title {
@@ -114,7 +154,7 @@ header {
 }
 
 body {
-  background-color: lightgray
+  // background-color: lightgray
 }
 
 #repping {
@@ -145,11 +185,13 @@ body {
   display:block;
   color:#333;
   text-decoration:none;
-  font-weight:700;
-  font-size: 25pt;
+  // font-weight:700;
+  font-size: 15pt;
   line-height:32px;
   padding:0 15px;
-  font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+  font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: left;
+
 }
 
 .front-menu ul li
@@ -202,7 +244,8 @@ body {
 
 .front-menu ul li:hover > ul
 {
-  display:block
+  display:block;
+  border: 1px solid gray;
 }
 
 .show-drop {
