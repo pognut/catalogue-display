@@ -11,44 +11,16 @@
       <!-- this goes to index -->
       <!-- drop down for catalogue/art on vendor pages -->
       <!-- use subfolders to organize -->
-    <%= image_tag("Snapdragon_w_type.jpg", class: "header_logo") %>
-    <p class = "snap-head-text">SNAPDRAGON PRODUCTIONS</p>
+    <!-- <%= image_tag("Snapdragon_w_type.jpg", class: "header_logo") %> -->
+    <!-- <p class = "snap-head-text">SNAPDRAGON PRODUCTIONS</p> -->
   </div>
  <p class = "front-title"><span id="title-first">FALL</span>/<span id="title-second">WINTER 2017-18</span></p>
 
   <% if admin_signed_in? %>
   <!-- dont forget to add an upload catalogue method of some kind -->
 <!--     <h1 id="repping">REPRESENTING</h1> -->
-    <div class="front-menu">
-      <ul>
-        <!-- dropdown menu with links to all vendors page and individual pages  -->
-        <li><a href="/vendors">VENDORS</a>
-          <ul>
-            <!-- add view all -->
-            <li><%= link_to('BUM WRAPS', controller: "catalogues", action: "show", id:"BUM WRAPS") %></li>
-            <li><%= link_to('CHAMPION', controller: "catalogues", action: "show", id:"CHAMPION") %></li>
-            <li><%= link_to('GEAR', controller: "catalogues", action: "show", id:"GEAR") %></li>
-            <li><%= link_to('OUT OF HAND', controller: "catalogues", action: "show", id:"OUT OF HAND") %></li>
-            <li><%= link_to('SPERRY', controller: "catalogues", action: "show", id:"SPERRY") %></li>
-            <li><%= link_to('SPIRIT', controller: "catalogues", action: "show", id:"SPIRIT") %></li>
-            <li><%= link_to('UNDER ARMOUR', controller: "catalogues", action: "show", id:"UNDER ARMOUR") %></li>
-            <li><%= link_to('VANTAGE', controller: "catalogues", action: "show", id:"VANTAGE") %></li>
 
-          </ul>
-        </li>
-        <li><a href="#">PHOTO GALLERY</a></li>
-        <li><a href="#">ABOUT US</a></li>
-        <li><a href="/contact">CONTACT</a></li>
-      </ul>
-    </div>
-    <div class = 'slick-test'>
-    <!-- set up folder for scrolling images, grab filenames in controller, pass array in instance var  -->
-    <!-- @imagenames.each |name| image_tag(@account/scrollimages/name) -->
-      <%= image_tag('MODEL_G3133_5820 OUTTA TOWN HOOD_AP002877981 P1 FC2.jpg') %>
-      <%= image_tag('MODEL_G3135_190_OUTTA TOWN CREW MALE_AP002822177 P1 FC3.jpg') %>
-      <%= image_tag('MODEL_G7357_190_AP002867044 P2 FC1.jpg') %>
-      <%= image_tag('MODEL_INTRO_FEMALE_G7358_1026_MALE_G2372_948.jpg') %>
-    </div>
+PICTURE GOES HERE ONCE I GET IT FROM THEO
 
   <% end %>
 

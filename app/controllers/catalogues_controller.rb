@@ -37,8 +37,10 @@ class CataloguesController < ApplicationController
                 entry = entry.split('--')[1]
               end
               entry = entry.upcase
-              children <<  "<li><a href='#{link}'>#{entry}</a></li>"
+
+              children <<  "<li class='category'><a href='#{link}''>#{entry}</a></li>"
             else
+              # gotta fix these two somehow
               children <<  "<li><a href='#'>NO APP</a></li>"
             end
           else
@@ -53,7 +55,8 @@ class CataloguesController < ApplicationController
           if entry.include?('--')
             entry = entry.split('--')[1]
           end
-          children <<  "<li><a href='#{link}'>#{entry}</a></li>"
+          # this is where final kids are created
+          children <<  "<li class='kid'><a href='#{link}'>#{entry}</a></li>"
         end
       end
       return data
@@ -72,10 +75,11 @@ class CataloguesController < ApplicationController
           else
             clean = cap.split('.')[0]
           end
-          str = "<li class='show-drop'><a href='#'>#{clean}</a><ul>"
+          # this is where top level categories (catalogs etc) and categories with kids are created
+          str = "<li class='category'>#{clean}"
           @string = @string + str
           listifier(folder[:children])
-          @string = @string + "</ul>"
+          # @string = @string + "</ul>"
         else
           @string = @string + folder
         end
@@ -107,6 +111,10 @@ class CataloguesController < ApplicationController
 
   def contact
     render "contact.html.erb"
+  end
+
+  def gallery
+    render "gallery.html.erb"
   end
 
 end

@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get "/contact", to: "catalogues#contact"
   get "/catalogues/:id/:subid", to: "catalogues#subfolder"
   get "/vendors", to: "catalogues#vendors"
+  get "/photogallery", to: "catalogues#gallery"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -9,7 +9,7 @@
 <body>
   <div class ="header">
       <!-- this goes to index -->
-    <p class = "front-title"><%= @account %></p>
+    <p class = "brand-title"><%= @account %></p>
   </div>
 
   <% if admin_signed_in? %>
@@ -32,7 +32,7 @@
         <!-- <a href='<%= image_path("#{@account}/#{filename}")%>'><%= filename %></a> -->
         <!-- <% end %> -->
       <!-- <% end %> -->
-      <div class="front-menu">
+      <div class='vendor-lists'>
         <ul>
           <%= @string.html_safe %>
         </ul>

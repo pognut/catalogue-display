@@ -22,9 +22,31 @@
         </div>
       <% elsif admin_signed_in? %>
         <!-- <%= @test %> -->
-        <div class = "head">
-          <%= link_to('SIGN OUT', destroy_admin_session_path, :method => :delete ) %>
+        <div class = "head front-menu">
+
           <!-- <%= link_to("invite", new_user_invitation_path) %> -->
+          <ul>
+            <!-- dropdown menu with links to all vendors page and individual pages  -->
+            <li class="top-menu"><a href="/vendors">VENDORS</a>
+              <ul>
+                <!-- add view all -->
+                <li><%= link_to('BUM WRAPS', controller: "catalogues", action: "show", id:"BUM WRAPS") %></li>
+                <li><%= link_to('CHAMPION', controller: "catalogues", action: "show", id:"CHAMPION") %></li>
+                <li><%= link_to('GEAR', controller: "catalogues", action: "show", id:"GEAR") %></li>
+                <li><%= link_to('OUT OF HAND', controller: "catalogues", action: "show", id:"OUT OF HAND") %></li>
+                <li><%= link_to('SPERRY', controller: "catalogues", action: "show", id:"SPERRY") %></li>
+                <li><%= link_to('SPIRIT', controller: "catalogues", action: "show", id:"SPIRIT") %></li>
+                <li><%= link_to('UNDER ARMOUR', controller: "catalogues", action: "show", id:"UNDER ARMOUR") %></li>
+                <li><%= link_to('VANTAGE', controller: "catalogues", action: "show", id:"VANTAGE") %></li>
+
+              </ul>
+            </li>
+            <li class="top-menu"><a href="photogallery">PHOTO GALLERY</a></li>
+            <li><%= image_tag("Snapdragon_w_type.jpg", class: "header_logo") %></li>
+            <li class="top-menu"><a href="#">ABOUT US</a></li>
+            <li class="top-menu"><a href="/contact">CONTACT</a></li>
+          </ul>
+          <%= link_to('SIGN OUT', destroy_admin_session_path, :method => :delete, :class=>"authentication-link") %>
         </div>
       <% else %>
         <div class = "head">
