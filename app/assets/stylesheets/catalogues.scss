@@ -98,7 +98,8 @@ header {
 }
 
 .pdf-container * {
-  display: block;
+  // display: block;
+  list-style: none;
   margin: 10px 0;
   // font-size: 26pt;
   text-decoration: none;
@@ -110,6 +111,10 @@ header {
   color: gray;
   font-size: 14pt;
   border-bottom: 1px solid lightblue;
+}
+
+.category a {
+  color: gray;
 }
 
 .kid {

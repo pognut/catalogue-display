@@ -38,7 +38,7 @@ class CataloguesController < ApplicationController
               end
               entry = entry.upcase
 
-              children <<  "<li class='category'>#{entry}</li>"
+              children <<  "<li class='category'><a href='#{link}''>#{entry}</a></li>"
             else
               # gotta fix these two somehow
               children <<  "<li><a href='#'>NO APP</a></li>"
@@ -56,7 +56,7 @@ class CataloguesController < ApplicationController
             entry = entry.split('--')[1]
           end
           # this is where final kids are created
-          children <<  "<li class='kid'><a href=#{link}>#{entry}</a></li>"
+          children <<  "<li class='kid'><a href='#{link}'>#{entry}</a></li>"
         end
       end
       return data
@@ -111,6 +111,10 @@ class CataloguesController < ApplicationController
 
   def contact
     render "contact.html.erb"
+  end
+
+  def gallery
+    render "gallery.html.erb"
   end
 
 end
