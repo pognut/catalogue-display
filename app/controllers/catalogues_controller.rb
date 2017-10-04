@@ -38,7 +38,7 @@ class CataloguesController < ApplicationController
               end
               entry = entry.upcase
 
-              children <<  "<li class='category'><a href='#{link}'>#{entry}</a></li>"
+              children <<  "<li class='category'>CREDIT APP<li class='kid'><a href='#{link}'>#{entry}</a></li></li>"
             else
               # gotta fix these two somehow
               children <<  "<li><a href='#'>NO APP</a></li>"
