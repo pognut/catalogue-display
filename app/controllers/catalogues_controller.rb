@@ -117,4 +117,8 @@ class CataloguesController < ApplicationController
     render "gallery.html.erb"
   end
 
+  def about
+    render "about.html.erb"
+  end
+
 end

@@ -10,13 +10,13 @@
 
   <% if admin_signed_in? %>
     <div class = "link-container">
-      <%= link_to image_tag("champcover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"CHAMPION"} %>
-      <%= link_to image_tag("gearcover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"GEAR"} %>
-      <%= link_to image_tag("outofhandcover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"OUT OF HAND"} %>
-      <%= link_to image_tag("sperrycover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"SPERRY"} %>
-      <%= link_to image_tag("spiritcover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"SPIRIT"} %>
-      <%= link_to image_tag("uacover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"UNDER ARMOUR"} %>
-      <%= link_to image_tag("vantagecover.png", class: "header_logo"), {controller: "catalogues", action: "show", id:"VANTAGE"} %>
+      <%= link_to image_tag("champcover.png"), {controller: "catalogues", action: "show", id:"CHAMPION"} %>
+      <%= link_to image_tag("gearcover.png"), {controller: "catalogues", action: "show", id:"GEAR"} %>
+      <%= link_to image_tag("outofhandcover.png"), {controller: "catalogues", action: "show", id:"OUT OF HAND"} %>
+      <%= link_to image_tag("sperrycover.png"), {controller: "catalogues", action: "show", id:"SPERRY"} %>
+      <%= link_to image_tag("spiritcover.png"), {controller: "catalogues", action: "show", id:"SPIRIT"} %>
+      <%= link_to image_tag("uacover.png"), {controller: "catalogues", action: "show", id:"UNDER ARMOUR"} %>
+      <%= link_to image_tag("vantagecover.png"), {controller: "catalogues", action: "show", id:"VANTAGE"} %>
     </div>
     <p id="showback">
       <a href = "/">BACK</a>
