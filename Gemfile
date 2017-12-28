@@ -14,6 +14,7 @@ end
 gem 'pg'
 gem 'devise'
 gem 'devise_invitable'
+gem 'smart_assets'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use Puma as the app server
