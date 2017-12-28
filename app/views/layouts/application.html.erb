@@ -1,9 +1,8 @@
 <!-- mom wants vendor specific photos, displayed as photos with captions, but on a seperate page -->
 <!-- have a single page that displays photos, but loads different photos based on where you came from -->
 <!-- or since its on the show page, should be easy to just make sub pages -->
-<!-- remove zz from credit app name -->
-<!-- fix sign out (should be farther right) -->
 <!-- figure out pdf flip book lib from github -->
+<!-- mobile optimization -->
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +28,7 @@
         </div>
       <% elsif admin_signed_in? %>
         <!-- <%= @test %> -->
+        <%= link_to('SIGN OUT', destroy_admin_session_path, :method => :delete, :class=>"authentication-link") %>
         <div class = "head front-menu">
 
           <!-- <%= link_to("invite", new_user_invitation_path) %> -->
@@ -53,7 +53,7 @@
             <li class="top-menu"><a href="/about">ABOUT US</a></li>
             <!-- <li class="top-menu"><a href="/contact">CONTACT</a></li> -->
           </ul>
-          <%= link_to('SIGN OUT', destroy_admin_session_path, :method => :delete, :class=>"authentication-link") %>
+
         </div>
       <% else %>
         <div class = "head">

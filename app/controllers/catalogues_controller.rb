@@ -24,7 +24,6 @@ class CataloguesController < ApplicationController
           if entry.include?("credit app")
             kids = Dir.entries(full_path)
             kids.reject! {|x|exclude.include?(x)}
-            puts kids
             if kids.length >= 1
               # can add a kids.each loop here if mom ever wants more than one credit app
               child_path = File.join(full_path, kids[0])
@@ -43,19 +42,29 @@ class CataloguesController < ApplicationController
               # gotta fix these two somehow
               children <<  "<li><a href='#'>NO APP</a></li>"
             end
+          elsif entry.include?("toplevel")
+            # replace toplevel with a better check, something like if parent = pictures
+            children <<  "<li class='kid'><a href='/catalogues/#{@account}/pictures/#{entry}'>#{entry}</a></li>"
           else
             children << directory_hash(full_path, entry)
           end
         else
-          true_path = full_path.partition("app/assets/images/")[2]
-          link = ActionController::Base.helpers.image_path(true_path)
-          puts true_path
+          # true_path = full_path.partition("app/assets/images/")[2]
+          if full_path.include?('pictures')
+            # add image paths to @ here
+            puts full_path
+          else
+            true_path = full_path.partition("app/assets/images/")[2]
+            puts true_path
+            link = ActionController::Base.helpers.image_path(true_path)
+          end
           # puts link
           entry = entry.split('.')[0]
           if entry.include?('--')
             entry = entry.split('--')[1]
           end
           # this is where final kids are created
+
           children <<  "<li class='kid'><a href='#{link}'>#{entry}</a></li>"
         end
       end
@@ -67,19 +76,21 @@ class CataloguesController < ApplicationController
         if folder.is_a?(Hash)
           # puts folder[:children].length
           next if folder[:children].length == 0
-          # puts "testing"
-          cap = folder["name"].upcase
-          if cap.include?('--')
-            clean = cap.split('--')[1]
-            clean = clean.split('.')[0]
+          if folder["name"].include?("toplevel")
           else
-            clean = cap.split('.')[0]
+            cap = folder["name"].upcase
+            if cap.include?('--')
+              clean = cap.split('--')[1]
+              clean = clean.split('.')[0]
+            else
+              clean = cap.split('.')[0]
+            end
+            # this is where top level categories (catalogs etc) and categories with kids are created
+            str = "<li class='category'>#{clean}"
+            @string = @string + str
+            listifier(folder[:children])
+            # @string = @string + "</ul>"
           end
-          # this is where top level categories (catalogs etc) and categories with kids are created
-          str = "<li class='category'>#{clean}"
-          @string = @string + str
-          listifier(folder[:children])
-          # @string = @string + "</ul>"
         else
           @string = @string + folder
         end
@@ -94,6 +105,19 @@ class CataloguesController < ApplicationController
     @pdfs = directory_hash('app/assets/images'+ActionController::Base.helpers.asset_path(@account))
     @tester = listifier(@pdfs[:children])
     # puts @string
+  end
+
+  def pictures
+    @account = params[:id]
+    @pictype = params[:subid]
+    @pics =[]
+    @picspath = Dir.glob('app/assets/images'+ActionController::Base.helpers.asset_path(@account)+'/pictures'+ActionController::Base.helpers.asset_path(@pictype)+'/*')
+    @picspath.each do |path|
+      true_path = path.partition("app/assets/images/")[2]
+      link = ActionController::Base.helpers.image_path(true_path)
+      @pics << link
+    end
+    render "pictures.html.erb"
   end
 
   def subfolder
