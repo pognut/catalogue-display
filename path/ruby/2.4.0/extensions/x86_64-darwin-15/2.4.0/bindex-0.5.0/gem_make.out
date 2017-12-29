@@ -1,0 +1,15 @@
+current directory: /Users/nicholasmichel/Desktop/Projects/MomCatalogue/path/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+/Users/nicholasmichel/.rvm/rubies/ruby-2.4.0/bin/ruby -r ./siteconf20171229-69229-1843xcp.rb extconf.rb
+creating Makefile
+
+current directory: /Users/nicholasmichel/Desktop/Projects/MomCatalogue/path/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/nicholasmichel/Desktop/Projects/MomCatalogue/path/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/nicholasmichel/Desktop/Projects/MomCatalogue/path/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20171229-69229-1sk4t6y/bindex
