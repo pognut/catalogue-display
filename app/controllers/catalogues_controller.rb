@@ -42,29 +42,39 @@ class CataloguesController < ApplicationController
               # gotta fix these two somehow
               children <<  "<li><a href='#'>NO APP</a></li>"
             end
+          elsif entry.include?('flipbook')
+            # Dir.entries(full_path).each do |flipbook|
+            #   next if exclude.include?(flipbook)
+            #   if File.directory?(full_path)
+                name = entry.split("-")[1]
+                name = name.upcase
+                children <<  "<li class='kid'><a href='#{"/assets/#{@account}/catalogs/#{entry}/mobile.html"}'>#{name}</a></li>"
+                # catfolder = full_path.split('/flipbook')[0]
+              # end
+
+            # end
           elsif entry.include?("toplevel")
             # replace toplevel with a better check, something like if parent = pictures
-            children <<  "<li class='kid'><a href='/catalogues/#{@account}/pictures/#{entry}'>#{entry}</a></li>"
+            entryname=entry.split('-')[0].upcase
+            children <<  "<li class='kid'><a href='/catalogues/#{@account}/pictures/#{entry}'>#{entryname}</a></li>"
+
           else
             children << directory_hash(full_path, entry)
           end
         else
           # true_path = full_path.partition("app/assets/images/")[2]
-          if full_path.include?('pictures')
-            # add image paths to @ here
-            puts full_path
-          else
+
             true_path = full_path.partition("app/assets/images/")[2]
             puts true_path
             link = ActionController::Base.helpers.image_path(true_path)
-          end
+
           # puts link
           entry = entry.split('.')[0]
           if entry.include?('--')
             entry = entry.split('--')[1]
           end
           # this is where final kids are created
-
+          entry = entry.upcase
           children <<  "<li class='kid'><a href='#{link}'>#{entry}</a></li>"
         end
       end

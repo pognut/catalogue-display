@@ -1,0 +1,301 @@
+/* line 4, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.pdf {
+  width: 30vw;
+  height: 80vh;
+}
+
+/* line 9, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.header_logo {
+  max-width: 20vw;
+  max-height: 20vh;
+}
+
+/* line 15, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.header {
+  text-align: center;
+}
+
+/* line 24, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.snap-head-text {
+  font-size: 14pt;
+}
+
+/* line 39, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.authentication-link {
+  vertical-align: top;
+  text-align: right;
+  margin-left: 80vw;
+}
+
+/* line 46, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.top-menu {
+  margin-top: 10%;
+}
+
+/* line 54, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-title {
+  text-align: center;
+  font-size: 30pt;
+}
+
+/* line 59, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-img img {
+  min-width: 99vw;
+  height: 80vh;
+}
+
+/* line 64, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.brand-title {
+  text-align: left;
+  margin-left: 40px;
+  margin-bottom: -5px;
+}
+
+/* line 70, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.slick-test {
+  max-width: 25vw;
+  max-height: 60vh;
+  margin: 40px auto;
+  clear: both;
+}
+
+/* line 81, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.link-container {
+  padding-top: 1vh;
+  text-align: center;
+}
+
+/* line 86, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.link-container a {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 18pt;
+  border: 1px solid gray;
+  width: 20vw;
+  height: 40vh;
+}
+
+/* line 97, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.link-container a img {
+  margin: 0 auto;
+  display: block;
+  min-width: 15vw;
+  max-height: 39vh;
+  margin-top: 3px;
+}
+
+/* line 108, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.pdf-container {
+  padding-top: 1vh;
+  text-align: center;
+}
+
+/* line 113, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.pdf-container * {
+  list-style: none;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+/* line 122, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.category {
+  text-align: left;
+  color: gray;
+  font-size: 14pt;
+  border-bottom: 1px solid lightblue;
+  margin-top: 20px;
+}
+
+/* line 130, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.category a {
+  color: gray;
+}
+
+/* line 134, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.kid {
+  text-align: left;
+}
+
+/* line 139, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.kid a {
+  color: gray;
+}
+
+/* line 143, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.kid a {
+  color: blue;
+}
+
+/* line 152, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+#title-first {
+  color: #BF5FFF;
+}
+
+/* line 156, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+#title-second {
+  color: limegreen;
+}
+
+/* line 160, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+#contact {
+  text-align: center;
+  font-size: 20pt;
+}
+
+/* line 165, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+#contact div {
+  display: inline-block;
+  margin: 40px;
+}
+
+/* line 170, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+#showback {
+  text-align: center;
+  font-size: 20pt;
+}
+
+/* line 179, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+#repping {
+  text-align: center;
+}
+
+/* line 184, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu {
+  text-align: center;
+}
+
+/* line 191, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index: 4;
+}
+
+/* line 202, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 15pt;
+  line-height: 32px;
+  padding: 0 15px;
+  font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: left;
+}
+
+/* line 216, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul li {
+  position: relative;
+  float: left;
+  padding: 0;
+}
+
+/* line 225, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul li.current-menu-item {
+  background: #ddd;
+}
+
+/* line 230, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul li:hover {
+  background: #f6f6f6;
+}
+
+/* line 235, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 0;
+}
+
+/* line 245, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul ul li {
+  float: none;
+  width: 200px;
+  overflow-wrap: break-word;
+}
+
+/* line 252, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul ul a {
+  line-height: 120%;
+  padding: 10px 5px;
+}
+
+/* line 258, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul ul ul {
+  top: 0;
+  left: 100%;
+}
+
+/* line 264, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.front-menu ul li:hover > ul {
+  display: block;
+  border: 1px solid gray;
+}
+
+/* line 275, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.log-in {
+  text-align: center;
+}
+
+/* line 279, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+#logo-home-link {
+  max-height: 20vh;
+}
+
+/* line 284, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+#logo-home-link > a {
+  padding: 0;
+  max-height: 20vh;
+}
+
+/* line 289, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.about-blurb {
+  text-align: center;
+}
+
+/* line 294, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.about-title {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+/* line 299, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.sign-in {
+  text-align: right;
+  margin-right: 15vw;
+}
+
+/* line 304, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.pic-gallery {
+  display: inline-block;
+  margin-left: 3vw;
+}
+
+/* line 309, /Users/nicholasmichel/Desktop/Projects/MomCatalogue/app/assets/stylesheets/catalogues.scss */
+.pic-gallery img {
+  max-height: 30vh;
+  max-width: 30vw;
+  margin: 0 10px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

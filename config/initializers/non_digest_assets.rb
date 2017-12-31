@@ -1,1 +1,1 @@
-NonStupidDigestAssets.whitelist += [/spirit sp 17catalog/]
+NonStupidDigestAssets.whitelist += [/catalog\//]
