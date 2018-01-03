@@ -57,6 +57,19 @@
           <%= link_to('LOG IN', '/admins/sign_in') %>
           <!-- <%= link_to('WHOLESALE LOG IN', '/users/sign_in') %> -->
         </div>
+        <div class = "head front-menu">
+
+          <!-- <%= link_to("invite", new_user_invitation_path) %> -->
+          <ul>
+            </li>
+            <!-- add a link to homepage in this img -->
+            <li id='logo-home-link'><a  href="/"><%= image_tag("Snapdragon_w_type.jpg", class: "header_logo") %></a></li>
+            <!-- <li class="top-menu"><a href="/photogallery">PHOTO GALLERY</a></li> -->
+            <!-- <li class="top-menu"><a href="/about">ABOUT US</a></li> -->
+            <!-- <li class="top-menu"><a href="/contact">CONTACT</a></li> -->
+          </ul>
+
+        </div>
       <% end %>
     </header>
     <%= yield %>

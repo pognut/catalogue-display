@@ -8,6 +8,10 @@ $(document).on("turbolinks:load", function(){
     autoplaySpeed: 4000,
   });
 
+var $input = $('#refresh');
+
+$input.val() == 'yes' ? location.reload(true) : $input.val('yes');
+
 
 
 

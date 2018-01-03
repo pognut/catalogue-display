@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get "/photogallery", to: "catalogues#gallery"
   get "/about", to: "catalogues#about"
   get "/catalogues/:id/pictures/:subid", to: "catalogues#pictures"
+  get "/catalogues/:id/catalogs/:subid", to: "catalogues#flipbook"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

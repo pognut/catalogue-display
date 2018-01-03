@@ -48,7 +48,14 @@ class CataloguesController < ApplicationController
             #   if File.directory?(full_path)
                 name = entry.split("-")[1]
                 name = name.upcase
-                children <<  "<li class='kid'><a href='#{"/assets/#{@account}/catalogs/#{entry}/mobile.html"}'>#{name}</a></li>"
+                if @account=="UNDER ARMOUR" && full_path.include?('UA GOLF')
+                  uasub = 'UA GOLF'
+                elsif @account=="UNDER ARMOUR" && full_path.include?('UA FITNESS')
+                  uasub = 'UA FITNESS'
+                end
+
+                linky = view_context.link_to name, controller: 'catalogues', action: 'flipbook', id: @account, subid: entry, :data => { :uaname => uasub }
+                children <<  "<li class='kid'>#{linky}</li>"
                 # catfolder = full_path.split('/flipbook')[0]
               # end
 
@@ -65,7 +72,7 @@ class CataloguesController < ApplicationController
           # true_path = full_path.partition("app/assets/images/")[2]
 
             true_path = full_path.partition("app/assets/images/")[2]
-            puts true_path
+            # puts true_path
             link = ActionController::Base.helpers.image_path(true_path)
 
           # puts link
@@ -153,6 +160,15 @@ class CataloguesController < ApplicationController
 
   def about
     render "about.html.erb"
+  end
+
+  def flipbook
+    puts params
+    @account = params[:id]
+    @subaccount = params[:subid]
+    @uasub = params[:data][:uaname]
+    puts @uasub
+    render "flipbook.html.erb", layout: false
   end
 
 end
